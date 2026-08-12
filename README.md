@@ -276,3 +276,39 @@ DIVIDE(
     [Previous Year Sales]
 )
 ```
+
+---
+
+# 📸 Dashboard Screenshots
+
+## Executive Dashboard
+
+![Executive Dashboard](Executive-Dashboard-bindhu.png)
+
+## Executive Dashboard - Additional Page
+
+![Executive Dashboard Additional Page](Executive%20Dashboard(1).png)
+
+## Sales Analysis Dashboard
+
+![Sales Analysis Dashboard](Sales-Analysis-Dashboard.png)
+
+## Sales Analysis Dashboard - Additional Page
+
+![Sales Analysis Additional Page](Sales-Analysis-Dashboard(1).png)
+
+## Product Analysis Dashboard
+
+![Product Analysis Dashboard](Product%20Analysis%20Dashboard.png)
+
+## Product Analysis Dashboard - Additional Page
+
+![Product Analysis Dashboard Additional Page](Product%20Analysis%20Dashboard(1).png)
+
+## Operations Analysis Dashboard
+
+![Operations Analysis Dashboard](Operations%20Analysis%20Dashboard.png)
+
+## Operations Analysis Dashboard - Additional Page
+
+![Operations Analysis Dashboard Additional Page](Operations%20Analysis%20Dashboard(1).png)
