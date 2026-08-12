@@ -4,9 +4,17 @@
 
 This project is an interactive **Sales Performance and Business Intelligence Dashboard** developed using Microsoft Power BI.
 
-The dashboard analyzes **50,000+ sales records** to provide insights into sales performance, product performance, regional trends, customer-related metrics, and operational efficiency.
+The dashboard analyzes **50,000+ sales records** to provide insights into sales performance, product performance, regional trends, profitability, shipping performance, delivery performance, and operational efficiency.
 
-The project demonstrates practical skills in **Power BI, DAX, Power Query, data modeling, and interactive dashboard design**.
+The project demonstrates practical skills in:
+
+- Power BI
+- DAX
+- Power Query
+- Data Modeling
+- Time Intelligence
+- Data Visualization
+- Business Intelligence
 
 ---
 
@@ -18,17 +26,18 @@ The project demonstrates practical skills in **Power BI, DAX, Power Query, data 
 - Microsoft Excel
 - Data Modeling
 - Time Intelligence
-- Data Visualization
+- Interactive Data Visualization
 
 ---
 
-## 📊 Dashboard Pages
+# 📊 Dashboard Pages
 
-### 1. Executive Dashboard
+## 1. Executive Dashboard
 
-Provides a high-level overview of overall business performance.
+The Executive Dashboard provides a high-level overview of overall business performance.
 
-**Key KPIs:**
+### Key KPIs
+
 - Total Sales
 - Total Profit
 - Total Customers
@@ -36,88 +45,182 @@ Provides a high-level overview of overall business performance.
 - Average Profit per Order
 - Total Shipping Cost
 
-**Visual Analysis:**
-- Sales by Product
-- Sales by Region
-- Sales by Category
-- Sales by State
-- Monthly Sales and Profit Trend
+### Visual Analysis
+
+- Total Sales by Product
+- Total Sales by Region
+- Total Sales by Category
+- Total Sales by State
+- Monthly Sales & Profit Trend
+
+### Business Purpose
+
+This dashboard helps users quickly understand overall sales performance and identify important business trends.
 
 ---
 
-### 2. Sales Analysis Dashboard
+## 2. Sales Analysis Dashboard
 
-Analyzes sales performance across different time periods and business dimensions.
+The Sales Analysis Dashboard focuses on sales performance across different time periods, regions, states, categories, and salespersons.
 
-**Key KPIs:**
+### Key KPIs
+
 - Total Sales
 - Sales YTD
 - Sales MTD
 - Sales QTD
 - YoY Growth %
 
-**Visual Analysis:**
-- Monthly Sales and Profit Trend
-- Quarterly Sales
-- Yearly Sales
-- Sales by Region
-- Sales by State
-- Sales by Salesperson
+### Visual Analysis
+
+- Monthly Sales & Profit Trend
+- Quarterly Sales Analysis
+- Yearly Sales Trend
+- Total Sales by State
+- Total Sales by Region
+- Total Sales by Salesperson
+
+### Interactive Filters
+
+- Month
+- Quarter
+- Region
+- Year
+- State
+- Category
+- Salesperson
+
+### Business Purpose
+
+This dashboard helps identify sales trends, strong-performing regions, salespersons, and changes in performance over time.
 
 ---
 
-### 3. Product Analysis Dashboard
+## 3. Product Analysis Dashboard
 
-Analyzes product, category, sub-category, brand, profitability, and discount performance.
+The Product Analysis Dashboard focuses on product, category, sub-category, brand, profitability, customer ratings, and discount performance.
 
-**Key KPIs:**
+### Key KPIs
+
 - Total Products
 - Total Sales
 - Total Profit
 - Total Quantity
-- Average Customer Rating
+- Average Rating
 - Average Discount
-- Profit Margin
+- Profit Margin %
 
-**Visual Analysis:**
-- Sales by Product
-- Sales by Sub-Category
-- Sales by Category
-- Sales by Brand
+### Visual Analysis
+
+- Total Sales by Product
+- Total Sales by Sub-Category
+- Total Sales by Category
+- Total Sales by Brand
 - Product Profit Analysis
 - Discount Analysis
 
+### Interactive Filters
+
+- Month
+- Sub-Category
+- Category
+- Year
+- State
+- Region
+- Brand
+
+### Business Purpose
+
+This dashboard helps identify top-performing products, profitable categories, high-performing brands, and the impact of discounts on sales.
+
 ---
 
-### 4. Operations Analysis Dashboard
+## 4. Operations Analysis Dashboard
 
-Analyzes logistics, delivery, shipping, warehouse, and return performance.
+The Operations Analysis Dashboard focuses on order fulfillment, delivery, shipping, warehouse performance, and returns.
 
-**Key KPIs:**
+### Key KPIs
+
 - Total Orders
 - Average Delivery Days
 - Total Shipping Cost
+- On-Time Delivery %
+- Average Shipping Cost
 - Returned Orders
-- Return Rate
-- On-Time Delivery
+- Return Rate %
 
-**Visual Analysis:**
+### Visual Analysis
+
 - Order Priority Analysis
 - Warehouse Performance
 - Delivery Days Trend
-- Shipping Cost by Region
+- Total Shipping Cost by Region
 - Orders by Shipping Mode
 - Returns Analysis
+- Total Orders by Delivery Status
+
+### Interactive Filters
+
+- Warehouse
+- Region
+- Month
+- Year
+- Ship Mode
+- Order Priority
 - Delivery Status
+
+### Business Purpose
+
+This dashboard helps monitor operational efficiency, delivery performance, shipping costs, warehouse performance, and return patterns.
 
 ---
 
-## 🧮 DAX & Time Intelligence
+# 🧮 DAX Measures & Time Intelligence
 
-The project uses DAX measures for business KPIs and time-based analysis.
+The project uses DAX measures to calculate business KPIs and perform time-based analysis.
 
-Examples include:
+## Total Sales
 
 ```DAX
-Total Sales =
-SUM(FactSales[Sales])
+Total Sales = SUM(FactSales[Sales])
+Total Profit =
+SUM(FactSales[Profit])
+Total Orders =
+DISTINCTCOUNT(FactSales[Order ID])
+Total Customers =
+DISTINCTCOUNT(FactSales[Customer ID])
+Average Profit per Order =
+DIVIDE(
+    [Total Profit],
+    [Total Orders]
+)
+Profit Margin % =
+DIVIDE(
+    [Total Profit],
+    [Total Sales]
+)
+Sales YTD =
+TOTALYTD(
+    [Total Sales],
+    Calendar[Date]
+)
+Sales MTD =
+TOTALMTD(
+    [Total Sales],
+    Calendar[Date]
+)
+Sales QTD =
+TOTALQTD(
+    [Total Sales],
+    Calendar[Date]
+)
+YoY Growth % =
+DIVIDE(
+    [Total Sales] - [Previous Year Sales],
+    [Previous Year Sales]
+)
+Previous Year Sales =
+CALCULATE(
+    [Total Sales],
+    SAMEPERIODLASTYEAR(Calendar[Date])
+)
