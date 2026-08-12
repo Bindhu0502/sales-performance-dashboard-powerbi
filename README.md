@@ -182,45 +182,97 @@ The project uses DAX measures to calculate business KPIs and perform time-based 
 ## Total Sales
 
 ```DAX
-Total Sales = SUM(FactSales[Sales])
+Total Sales =
+SUM(FactSales[Sales])
+```
+
+## Total Profit
+
+```DAX
 Total Profit =
 SUM(FactSales[Profit])
+```
+
+## Total Orders
+
+```DAX
 Total Orders =
 DISTINCTCOUNT(FactSales[Order ID])
+```
+
+## Total Customers
+
+```DAX
 Total Customers =
 DISTINCTCOUNT(FactSales[Customer ID])
+```
+
+## Average Profit per Order
+
+```DAX
 Average Profit per Order =
 DIVIDE(
     [Total Profit],
     [Total Orders]
 )
+```
+
+## Profit Margin %
+
+```DAX
 Profit Margin % =
 DIVIDE(
     [Total Profit],
     [Total Sales]
 )
+```
+
+## Sales YTD
+
+```DAX
 Sales YTD =
 TOTALYTD(
     [Total Sales],
     Calendar[Date]
 )
+```
+
+## Sales MTD
+
+```DAX
 Sales MTD =
 TOTALMTD(
     [Total Sales],
     Calendar[Date]
 )
+```
+
+## Sales QTD
+
+```DAX
 Sales QTD =
 TOTALQTD(
     [Total Sales],
     Calendar[Date]
 )
-YoY Growth % =
-DIVIDE(
-    [Total Sales] - [Previous Year Sales],
-    [Previous Year Sales]
-)
+```
+
+## Previous Year Sales
+
+```DAX
 Previous Year Sales =
 CALCULATE(
     [Total Sales],
     SAMEPERIODLASTYEAR(Calendar[Date])
 )
+```
+
+## YoY Growth %
+
+```DAX
+YoY Growth % =
+DIVIDE(
+    [Total Sales] - [Previous Year Sales],
+    [Previous Year Sales]
+)
+```
