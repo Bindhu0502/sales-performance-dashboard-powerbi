@@ -312,3 +312,11 @@ DIVIDE(
 ## Operations Analysis Dashboard - Additional Page
 
 ![Operations Analysis Dashboard Additional Page](Operations%20Analysis%20Dashboard(1).png)
+
+---
+
+# 🗂️ Power BI Data Model
+
+The report uses a structured data model to support interactive analysis, filtering, and time-intelligence calculations.
+
+![Power BI Data Model](Data-Model.png)
